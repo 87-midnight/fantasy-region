@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+   .pos{
+     width:200px;
+     height:200px;
+     padding:10px;
+     background:url("panda.svg") no-repeat bottom right #58a;
+     background-size: 100px 100px;
+     background-position:bottom 10px right 10px;
+   }
+   .origin{
+    width:200px;
+    height: 200px;
+    padding:20px;
+    background:url("panda.svg") no-repeat bottom right #58a;
+    background-size: 100px 100px;
+    background-origin: content-box;
+   }
+   .cal{
+     width:200px;
+     height: 200px;
+     padding:20px;
+     background: url("panda.svg") no-repeat #58a;
+     background-position: calc(100% - 20px) calc(100% - 20px);
+     background-size: 100px 100px;
+     background-clip: border-box;
+   }
+   .coordination{
+     width:200px;
+     height: 200px;
+     padding:20px;
+     background: padding-box url("panda.svg") bottom 20px right 20px /100px 100px no-repeat scroll #58a border-box;
+   }
+  </style>
+</head>
+<body>
+  <h3>背景图片偏移定位，使用background-position 和background 来定位背景图，使得背景图片的偏移量与内边距保持一致
+   <span>缺点：每次改动内边距的值，都需要修改background-position 的值</span>
+  </h3>
+  <div class="pos">
+  文字位置
+  </div>
+  <h3>背景图片偏移定位，使用background-origin和background 来定位背景图，使得背景图片的偏移量与内边距保持一致
+   <span>优点：每次改动内边距的值，背景图片都会与内边距的值保持一致</span>
+  </h3>
+  <div class="origin">
+    文字位置
+  </div>
+  <h3>使用cal()函数来计算背景图片的水平垂直偏移量，达到与内边距的值保持一致的效果</h3>
+  <div class="cal">
+    文字位置
+  </div>
+  <h4>
+    tips:
+    关于background属性的合并写法：
+    <span> background:  url("panda.svg") bottom 20px right 20px /100px 100px no-repeat scroll #58a content-box  border-box;
+      <p style="color:#333333">url("panda.svg")： &nbsp;设置background-image属性</p>
+      <p style="color:red">0 40% ：设置background-position，background-position-x,background-position-y的值，如果只给一个值，那么第二个值默认是50%<p>
+      <p style="color:green">/contain ：设置background-size属性，可以是10% 10%,100px 100px的写法，如果是合并写，必须写在background-position值的后面，并使用/分开</p>
+      <p style="color:orange">no-repeat：设置background-repeat属性</p>
+      <p style="color:pink">scroll：设置background-attachmen属性</p>
+      <p style="color:#58a">#58a ：设置background-color属性</p>
+      <p style="color:#666">padding-box ：设置background-origin(默认值是padding-box)属性，background-origin和background-clip属性值不规定放在哪个位置，但规定background-origin属性值
+        一定是在background-clip之前，CSS渲染器将读取第一个值做为background-origin的值,如果在合并属性中，只有border-box|padding-box|content-box其中一个值，那么
+      background-origin和background-clip都会使用这个值</p>
+      <p style="color:#E88">border-box： 设置background-clip(默认值是border-box)属性</p>
+    </span>
+  </h4>
+  <div class="coordination">
+    文字位置
+  </div>
+</body>
+</html>

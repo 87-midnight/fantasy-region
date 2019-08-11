@@ -1,0 +1,29 @@
+html,body{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+body> div{
+    display: block;
+    float: left;
+    width: 80px;
+    height: 30px;
+    margin:10px;
+    background: rgba(153, 153, 153, .2);
+    border-radius: 10px;
+}
+
+.zero{
+    border-radius: 50% / 100% 100% 0 0;
+    background: #58a;
+    width: inherit;
+    height: 20px;
+}
+.one{
+    border-radius: 100% 0 0;
+    background: #58a;
+    width: 15px;
+    height: 15px;
+}

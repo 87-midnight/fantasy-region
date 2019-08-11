@@ -1,0 +1,38 @@
+html,body{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+body> div{
+    display: block;
+    float: left;
+    width: 150px;
+    height: 150px;
+    margin:10px;
+}
+.zero{
+    background: url(timg.jpg) 150px 150px;
+    background-size: cover;
+    padding: 1em;
+}
+.zero>div{
+    background: whitesmoke;
+    padding: 1em;
+}
+
+.one{
+    padding: 1em;
+    border: 1em solid transparent;
+    background: linear-gradient(white,white) padding-box,
+    repeating-linear-gradient(-45deg,red 0,red 12.5%, transparent 0,transparent 25%, #58a 37.5%,transparent 0, transparent 50%) 0 / 5em 5em;
+
+}
+.two{
+    padding: 1em;
+    border: 16px solid transparent;
+    border-image: 16
+    repeating-linear-gradient(-45deg,red 0,red 1em, transparent 0,transparent 2em, #58a 0, #58a 3em,transparent 0, transparent 4em);
+    
+}

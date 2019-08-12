@@ -1,0 +1,59 @@
+html,body{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+}
+
+body> a{
+    display: block;
+    float: left;
+    width: 100px;
+    margin:10px;
+    text-decoration: none;
+    color: aliceblue;
+}
+.zero>div{
+    background: #58a;
+    transform: skewX(-45deg);
+    text-align: center;
+}
+.first{
+    position: relative;
+    text-align: center;
+}
+.first::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: #58a;
+    transform: skewX(-45deg);
+}
+.second{
+    display: block;
+    float: left;
+    width: 400px;
+    transform: rotate(45deg);
+    overflow: hidden;
+    margin: 100px;
+}
+.second>img{
+    max-width: 100%;
+    transform: rotate(-45deg) scale(1.42);
+}
+.third{
+    display: block;
+    float: left;
+}
+.third>img{
+    clip-path: polygon(50% 0,100% 50%, 50% 100%,0 50%);
+    transition: 1s clip-path;
+}
+.third>img:hover{
+    clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+    
+}
